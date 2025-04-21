@@ -1,18 +1,9 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layout/BaseLayout.astro';
 import '../styles/global.css';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
-  </head>
-<body>
-<Navigation />
-
+ 
+<BaseLayout pageTitle={pageTitle}>
   <h1>My Astro Learning Blog</h1>
   <p>This is where I will post about my journey learning Astro.</p>
   <ul>
@@ -21,4 +12,4 @@ import '../styles/global.css';
       <script>
     import "../scripts/menu.js";
   </script>
-</body>
+</body></BaseLayout>
