@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layout/BaseLayout.astro';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 import '../styles/global.css';
 ---
  
@@ -7,7 +8,8 @@ import '../styles/global.css';
   <h1>My Astro Learning Blog</h1>
   <p>This is where I will post about my journey learning Astro.</p>
   <ul>
-    <ls><a href="/posts/post-1/">Post 1</a></ls>
+    {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  </ul>
   <Footer />
       <script>
     import "../scripts/menu.js";
